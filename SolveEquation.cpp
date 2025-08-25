@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <math.h>
 #include "SolveEquation.h"
+#include <math.h>
+#include <stdio.h>
 
 bool isZero(double s) {
     return -precision <= s && s <= precision;
@@ -44,7 +44,7 @@ void solveQuadraticEquation(functionPatametrs* param){
 
 void solveEquation(functionPatametrs* param){
    // assert(param != NULL); // Error parser function
-    if (!isZero(param->a)){
+    if (!isZero(param->a)) {
         solveQuadraticEquation(param);
     } else {         
         solveLinearEquation(param);

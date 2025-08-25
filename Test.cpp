@@ -3,11 +3,11 @@
 
 #include "Test.h"
 
-void checkParametrs(functionPatametrs* param) {
+void checkParametrs(functionPatametrs* param){
     functionPatametrs get_params = {param->a, param->b, param->c, 0, 0, NO_ROOTS};
     solveEquation(&get_params);
 
-    if (get_params.nRoots != param->nRoots){
+    if (get_params.nRoots != param->nRoots) {
         printf("%d - %d\n", param->nRoots, get_params.nRoots);
         printf("FAILED. Icorrcet number of roots\n");
         return ;
@@ -34,7 +34,7 @@ void unitTests() {
 
     size_t number_of_unitTests = sizeof(array) / sizeof(array[0]);
 
-    for (size_t i = 0; i < number_of_unitTests; i++){
+    for (size_t i = 0; i < number_of_unitTests; i++) {
         checkParametrs(&array[i]);
     }
 }

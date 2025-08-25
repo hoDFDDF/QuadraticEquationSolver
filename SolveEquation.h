@@ -1,7 +1,7 @@
 #ifndef SOLVE_EQUATION_H_
 #define SOLVE_EQUATION_H_
 
-enum  Roots {
+enum Roots {
     INFINIT_ROOTS = -1,
     NO_ROOTS = 0,
     ONE_ROOT = 1,
@@ -12,7 +12,7 @@ struct functionPatametrs {
     double a;
     double b;
     double c;
-    // Consider separating fields in to different structs.
+    
     double x1;
     double x2;
     Roots nRoots;
@@ -27,3 +27,4 @@ void solveEquation(functionPatametrs* param);
 void printRoots(functionPatametrs* param);
 
 #endif // SOLVE_EQUATION_H_
+
