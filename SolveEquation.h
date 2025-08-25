@@ -1,0 +1,29 @@
+#ifndef SOLVE_EQUATION_H_
+#define SOLVE_EQUATION_H_
+
+enum  Roots {
+    INFINIT_ROOTS = -1,
+    NO_ROOTS = 0,
+    ONE_ROOT = 1,
+    TWO_ROOTS = 2
+};
+
+struct functionPatametrs {
+    double a;
+    double b;
+    double c;
+    // Consider separating fields in to different structs.
+    double x1;
+    double x2;
+    Roots nRoots;
+};
+
+const double precision = 0.00001; 
+
+bool isZero(double s); 
+void solveLinearEquation(functionPatametrs* param); //    SquareSolver* solver
+void solveQuadraticEquation(functionPatametrs* param);
+void solveEquation(functionPatametrs* param);
+void printRoots(functionPatametrs* param);
+
+#endif // SOLVE_EQUATION_H_
