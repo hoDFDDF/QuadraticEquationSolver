@@ -3,10 +3,10 @@
 #include <assert.h>
 #include <string.h>
 
-#include "headers/io.h"
-#include "headers/SolveEquation.h"
-#include "headers/Test.h"
-#include "headers/FlagsForCompilation.h"
+#include "io.h"
+#include "SolveEquation.h"
+#include "Test.h"
+#include "FlagsForCompilation.h"
 
 
 int clearBuffer() {
@@ -78,7 +78,7 @@ int main(int argc, char* argv[]) {
     printf("fuck you\n");
 
     return 0;
-} 
+}
 
 // структуры, enum их имена и т.п каждое слово с большой буквы без пробелов, например, NumberRoots
 // название функций, например, prettyFunc (первое с маленькой, дальше с большой)

@@ -1,4 +1,4 @@
-#include "headers/io.h"
+#include "io.h"
 
 void printRoots(functionPatametrs* param){
     switch (param->nRoots){

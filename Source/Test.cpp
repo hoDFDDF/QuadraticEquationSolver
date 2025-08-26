@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "headers/Test.h"
+#include "Test.h"
 
 
 void checkParametrs(functionPatametrs* param){

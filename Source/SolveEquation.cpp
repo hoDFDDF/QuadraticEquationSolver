@@ -1,8 +1,9 @@
-#include "headers/SolveEquation.h"
-
 #include <math.h>
 #include <stdio.h>
 #include <assert.h>
+
+#include "SolveEquation.h"
+
 bool isZero(double s) {
     return -precision <= s && s <= precision;
 }
