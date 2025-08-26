@@ -3,28 +3,21 @@
 #include <assert.h>
 #include <string.h>
 
-#include "io.h"
-#include "SolveEquation.h"
-#include "Test.h"
-#include "FlagsForCompilation.h"
+#include "headers/io.h"
+#include "headers/SolveEquation.h"
+#include "headers/Test.h"
+#include "headers/FlagsForCompilation.h"
 
 
 int clearBuffer() {
     char c = 0;
     do {
         c = getchar();
-        if (c == 'q'){
+        if (c == 'q') {
             return 0;
         }
     } while (c != '\n' && c != EOF);
     return 1;
-}
-
-int checkCharacterByCharacterInput(double* input_parametr){
-    if(scanf("lg", input_parametr)){
-        return 1;
-    }
-    return 0;
 }
 
 int releaseMode(functionPatametrs* param) {
@@ -32,12 +25,14 @@ int releaseMode(functionPatametrs* param) {
     printf("Please, enter 3 ratio numbers(a, b, c). To end program enter (q):\n");
     int c = 0;
 
-    while (true) {
+    while (true) { // TODO усовершенствовать выводимые фразы, пересмотреть логику
 
-        int right_numbers_of_enter_paramets = scanf("%lf %lf %lf", &(param->a), &(param->b), &(param->c));
+        int right_numbers_of_enter_paramets = scanf("%lf %lf %lf", &(param->a),
+                                                                   &(param->b),
+                                                                   &(param->c)); // TODO: скорректировать название переменной
         //printf("%lf %lf %lf\n", param->a, param->b, param->c); 
         if(right_numbers_of_enter_paramets != 3){
-            if (!clearBuffer()){
+            if (!clearBuffer()) {
                 return 0;
             }
             printf("Incorrect input, try again\n");
@@ -45,7 +40,8 @@ int releaseMode(functionPatametrs* param) {
         }
         
         solveEquation(param);
-        printRoots(param);            
+        printRoots(param); 
+        printf("\nContinue enter\n");           
     } 
          return 0; 
 }
@@ -70,7 +66,7 @@ int main(int argc, char* argv[]) {
             return 0;
         }
         if (strcmp(argv[1], help_flag) == 0) {
-            printf("Sorry, I can't help you now FUUUCK YOU\n");
+            printf("Sorry, I can't help you now FUUUCK YOU\n"); // ??????????
             return 0;
         }
         if (strcmp(argv[1], release_flag) == 0) {

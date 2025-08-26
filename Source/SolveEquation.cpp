@@ -1,13 +1,14 @@
-#include "SolveEquation.h"
+#include "headers/SolveEquation.h"
+
 #include <math.h>
 #include <stdio.h>
-
+#include <assert.h>
 bool isZero(double s) {
     return -precision <= s && s <= precision;
 }
 
 void solveLinearEquation(functionPatametrs* param) {
-    //assert(param != NULL);
+    assert(param != nullptr);
     if (isZero(param->b) && isZero(param->c)) {
        param-> nRoots = INFINIT_ROOTS;
     } else if (isZero(param->b) && !isZero(param->c)) {

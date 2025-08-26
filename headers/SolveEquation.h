@@ -18,7 +18,7 @@ struct functionPatametrs {
     Roots nRoots;
 };
 
-const double precision = 0.00001; 
+const double precision = 1e-12; 
 
 bool isZero(double s); 
 void solveLinearEquation(functionPatametrs* param); //    SquareSolver* solver

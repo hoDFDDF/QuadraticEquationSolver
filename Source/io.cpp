@@ -1,4 +1,4 @@
-#include "io.h"
+#include "headers/io.h"
 
 void printRoots(functionPatametrs* param){
     switch (param->nRoots){
@@ -9,10 +9,10 @@ void printRoots(functionPatametrs* param){
             printf("We found two roots x1 = %lg , x2 = %lg", param->x1, param->x2);
             break;
         case INFINIT_ROOTS:
-            printf("We found INFINIT roots");
+            printf("We found INFINITY roots");
             break;
         case NO_ROOTS:
             printf("There are no roots");
             break;
-    } // Default case for error parsing.
+    } // TODO  Default case for error parsing.
 }
