@@ -1,7 +1,13 @@
-#include "io.h"
 #include <stdio.h>
 
-void printRoots(functionPatametrs* param) {
+#include "io.h"
+#include "ERROR_PARSER.h"
+#include "SolveEquation.h"
+
+void printRoots(functionPatametrs* param){
+
+    CUSTOM_ASSERT(param != nullptr);
+
     switch (param->nRoots) {
         case ONE_ROOT:
             printf("We found only one root x = %lg", param->x1);

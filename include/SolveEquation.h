@@ -1,7 +1,6 @@
 #ifndef SOLVE_EQUATION_H_
 #define SOLVE_EQUATION_H_
 
-
 enum Roots {
     INFINIT_ROOTS = -1,
     NO_ROOTS = 0,
@@ -27,7 +26,7 @@ bool isZero(double s);
 void solveLinearEquation(functionPatametrs* param); //    SquareSolver* solver
 void solveQuadraticEquation(functionPatametrs* param);
 void solveEquation(functionPatametrs* param);
-int releaseMode(functionPatametrs* param);
+
 
 #endif // SOLVE_EQUATION_H_
 

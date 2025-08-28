@@ -1,32 +1,35 @@
-#include <assert.h>
 #include <stdio.h>
 #include <math.h>
 
 #include "Test.h"
+#include "ERROR_PARSER.h"
 
+bool compareDoubleNumbers(double first_num,  double second_num){
+    return (fabs(first_num - second_num) < precision); //если числа  равны выведет true, если нет - false
+}
 
 void checkParametrs(functionPatametrs* param){
-    assert(param != nullptr);
+    
     functionPatametrs get_params = {param->a, param->b, param->c, 0, 0, NO_ROOTS};
     solveEquation(&get_params);
 
-    if (get_params.nRoots != param->nRoots) {
+    if (!compareDoubleNumbers(get_params.nRoots, param->nRoots)) {
         printf("%d - %d\n", param->nRoots, get_params.nRoots);
         printf("FAILED. Icorrcet number of roots\n");
         return ; // TODO ввести счетчик тестов(сколько прошло, сколько всего)
     }
-    if ((get_params.nRoots >= 1 ) && param->x1 != get_params.x1) {
+    if ((get_params.nRoots >= 1 ) && !(compareDoubleNumbers(get_params.x1, param->x1))) {
         printf("FAILED. Your root x = %lg, should to be: %lg\n", param->x1, get_params.x1);
         return ;
     }
-    if (get_params.nRoots >= TWO_ROOTS &&  param->x2 != get_params.x2) {
+    if (get_params.nRoots >= TWO_ROOTS &&  !compareDoubleNumbers(get_params.x2, param->x2)) {
         printf("FAILED. Your roots x1 =  %lf, x2 = %lf, should be: x1 = %lf, x2 = %lf\n", get_params.x1, get_params.x2, param->x1, param->x2);
         return ;
     }
         printf("SUCCESS\n"); 
 }
 
-void unitTests() {
+void unitTests(){
     functionPatametrs array[] = {
         {1, 5, 6, -2, -3, TWO_ROOTS},
         {0, 0, 0, NAN, NAN, INFINIT_ROOTS},

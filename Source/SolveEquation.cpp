@@ -3,7 +3,7 @@
 #include <assert.h>
 
 #include "SolveEquation.h"
-
+#include "ERROR_PARSER.h"
 bool isZero(double s) {
     return -precision <= s && s <= precision;
 }
@@ -21,7 +21,7 @@ void solveLinearEquation(functionPatametrs* param) {
 }
 
 void solveQuadraticEquation(functionPatametrs* param){
-    //assert(param != NULL);
+    CUSTOM_ASSERT(param !=nullptr)
 
     double discriminant = (param->b * param->b) - (4 * param->a * param->c);
     if (discriminant > 0) {
@@ -45,7 +45,7 @@ void solveQuadraticEquation(functionPatametrs* param){
 }
 
 void solveEquation(functionPatametrs* param){
-   // assert(param != NULL); // Error parser function
+   CUSTOM_ASSERT(param != nullptr); // Error parser function
     if (!isZero(param->a)) {
         solveQuadraticEquation(param);
     } else {         
