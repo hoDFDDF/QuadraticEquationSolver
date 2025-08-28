@@ -1,7 +1,8 @@
 #include "io.h"
+#include <stdio.h>
 
-void printRoots(functionPatametrs* param){
-    switch (param->nRoots){
+void printRoots(functionPatametrs* param) {
+    switch (param->nRoots) {
         case ONE_ROOT:
             printf("We found only one root x = %lg", param->x1);
             break;
@@ -13,6 +14,9 @@ void printRoots(functionPatametrs* param){
             break;
         case NO_ROOTS:
             printf("There are no roots");
+            break;
+        default:
+            printf("ERROR");
             break;
     } // TODO  Default case for error parsing.
 }

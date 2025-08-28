@@ -7,10 +7,10 @@
 #include "SolveEquation.h"
 #include "Test.h"
 #include "FlagsForCompilation.h"
-
-
-int clearBuffer() {
-    char c = 0;
+#include "ERROR_PARSER.h"
+bool clearBuffer();
+bool clearBuffer() {
+    int c = 0;
     do {
         c = getchar();
         if (c == 'q') {
@@ -21,16 +21,15 @@ int clearBuffer() {
 }
 
 int releaseMode(functionPatametrs* param) {
-    
+
     printf("Please, enter 3 ratio numbers(a, b, c). To end program enter (q):\n");
-    int c = 0;
 
     while (true) { // TODO усовершенствовать выводимые фразы, пересмотреть логику
 
         int right_numbers_of_enter_paramets = scanf("%lf %lf %lf", &(param->a),
                                                                    &(param->b),
                                                                    &(param->c)); // TODO: скорректировать название переменной
-        //printf("%lf %lf %lf\n", param->a, param->b, param->c); 
+    
         if(right_numbers_of_enter_paramets != 3){
             if (!clearBuffer()) {
                 return 0;
@@ -45,7 +44,6 @@ int releaseMode(functionPatametrs* param) {
     } 
          return 0; 
 }
-
    
 
 
@@ -59,7 +57,7 @@ int releaseMode(functionPatametrs* param) {
 //make colorPrint
 int main(int argc, char* argv[]) {
     functionPatametrs param = {};
-   
+
     if (argc == 2) {
         if (strcmp(argv[1], test_flag) == 0) {
             unitTests();
@@ -70,7 +68,9 @@ int main(int argc, char* argv[]) {
             return 0;
         }
         if (strcmp(argv[1], release_flag) == 0) {
+            
             releaseMode(&param);
+
             return 0;
         }
     }

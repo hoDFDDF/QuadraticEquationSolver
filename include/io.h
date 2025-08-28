@@ -2,7 +2,6 @@
 #define IO_H_
 
 #include "SolveEquation.h"
-#include <stdio.h>
 
 void printRoots(functionPatametrs* param);
 
