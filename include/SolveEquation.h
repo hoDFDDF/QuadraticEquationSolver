@@ -8,7 +8,7 @@ enum Roots {
     TWO_ROOTS = 2
 };
 
-struct functionPatametrs {
+struct functionParametrs {
     double a;
     double b;
     double c;
@@ -18,14 +18,12 @@ struct functionPatametrs {
     Roots nRoots;
 };
 
-
-const double precision = 1e-12; 
-
+const double precision = 1e-6; 
 
 bool isZero(double s); 
-void solveLinearEquation(functionPatametrs* param); //    SquareSolver* solver
-void solveQuadraticEquation(functionPatametrs* param);
-void solveEquation(functionPatametrs* param);
+void solveLinearEquation(functionParametrs* param); //    SquareSolver* solver
+void solveQuadraticEquation(functionParametrs* param);
+void solveEquation(functionParametrs* param);
 
 
 #endif // SOLVE_EQUATION_H_

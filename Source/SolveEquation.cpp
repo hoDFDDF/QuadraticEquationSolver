@@ -1,15 +1,16 @@
 #include <math.h>
 #include <stdio.h>
-#include <assert.h>
 
 #include "SolveEquation.h"
 #include "ERROR_PARSER.h"
-bool isZero(double s) {
+
+bool isZero(double s){
     return -precision <= s && s <= precision;
 }
-
-void solveLinearEquation(functionPatametrs* param) {
-    assert(param != nullptr);
+// SquareSolverErrors
+void solveLinearEquation(functionParametrs* param){
+    
+    CUSTOM_ASSERT(param != nullptr);
     if (isZero(param->b) && isZero(param->c)) {
        param-> nRoots = INFINIT_ROOTS;
     } else if (isZero(param->b) && !isZero(param->c)) {
@@ -20,8 +21,8 @@ void solveLinearEquation(functionPatametrs* param) {
     }
 }
 
-void solveQuadraticEquation(functionPatametrs* param){
-    CUSTOM_ASSERT(param !=nullptr)
+void solveQuadraticEquation(functionParametrs* param){
+    CUSTOM_ASSERT(param != nullptr)
 
     double discriminant = (param->b * param->b) - (4 * param->a * param->c);
     if (discriminant > 0) {
@@ -30,8 +31,6 @@ void solveQuadraticEquation(functionPatametrs* param){
 
         // TODO fprintf(stderr, "...\n");
         param->nRoots = TWO_ROOTS;
-        //printf("x1 = %lg\n", param->x1);
-        //printf("x2 = %lg\n", param->x2);
         
     } else if (isZero(discriminant)) { // TODO read about double (float) comparison
         param->x1 = (-(param->b) / (2 * param->a));
@@ -40,11 +39,11 @@ void solveQuadraticEquation(functionPatametrs* param){
     } else if (discriminant < 0) { // if (CompareDoubles(Discriminant, 0) == -1)
         param->nRoots = NO_ROOTS;
     } else {
-        return ; // TODO make enum with error codes
+        return ;// UNKNOWN_DISCRIMINANT; // TODO make enum with error codes
     } // TODO also make error parser.
 }
 
-void solveEquation(functionPatametrs* param){
+void solveEquation(functionParametrs* param){
    CUSTOM_ASSERT(param != nullptr); // Error parser function
     if (!isZero(param->a)) {
         solveQuadraticEquation(param);
@@ -52,3 +51,4 @@ void solveEquation(functionPatametrs* param){
         solveLinearEquation(param);
     }
 }
+

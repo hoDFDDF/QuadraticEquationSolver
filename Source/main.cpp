@@ -3,11 +3,14 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <string.h>
-#include "io.h"
+
+#include "ioFuncs.h"
 #include "SolveEquation.h"
 #include "Test.h"
 #include "FlagsForCompilation.h"
-#include "ERROR_PARSER.h"
+#include "ProgramModes.h"
+
+
 
 // const char* const test_flag = "--test"; в header file
 // поработать над вводом и посмотреть учистку буффера ввода
@@ -17,17 +20,17 @@
 // добавить простейший makefile
 //make colorPrint
 int main(int argc, char* argv[]) {
-    
-    functionPatametrs param = {};
-    
-    if (argc == 2) {
+
+    functionParametrs param = {};
+
+    if (argc == 2) { // вынести в функцию parseCmdArguments
         if (strcmp(argv[1], test_flag) == 0) {
            
             unitTests();
             return 0;
         }
         if (strcmp(argv[1], help_flag) == 0) {
-            printf("Sorry, I can't help you now FUUUCK YOU\n"); // ??????????
+            printf(COLOR_MAGENTA "Sorry, I can't help you now FUUUCK YOU\n" RESET_ALL); 
             return 0;
         }
         if (strcmp(argv[1], release_flag) == 0) {
@@ -40,7 +43,7 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
-
+FILE* fl;
 // структуры, enum их имена и т.п каждое слово с большой буквы без пробелов, например, NumberRoots
 // название функций, например, prettyFunc (первое с маленькой, дальше с большой)
 // переменные, например, pretty_peremennay
