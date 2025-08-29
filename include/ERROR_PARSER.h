@@ -12,11 +12,11 @@
 // SQUARE_SOLVER_STATUS_IS_INCORRECT
 //}
 
-#define CUSTOM_ASSERT(exeption) {                                                                           \
-  if (!(exeption)) {                                                                                       \
+#define CUSTOM_ASSERT(exeption) {                                                                         \
+  if (!(exeption)) {                                                                                      \
   printf( COLOR_RED "FAILED. Your CUSTOM caught error in FILE: %s, on line %d, in function %s " RESET_ALL,\
     __FILE__, __LINE__, __func__);                                                                        \
-    abort();                                                                  \
+    abort();                                                                                              \
   }                                                                                                       \
 }
 

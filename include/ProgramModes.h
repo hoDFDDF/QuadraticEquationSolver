@@ -4,6 +4,6 @@
 #include "SolveEquation.h"
 
 bool clearBuffer();
-int releaseMode(functionParametrs* param);
+int releaseMode(FunctionParametrs* param);
 
 #endif // PROGRAM_MODES_

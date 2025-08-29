@@ -4,7 +4,7 @@
 #include "ERROR_PARSER.h"
 #include "SolveEquation.h"
 
-void printRoots(functionParametrs* param){
+void printRoots(FunctionParametrs* param){
 
     CUSTOM_ASSERT(param != nullptr);
 

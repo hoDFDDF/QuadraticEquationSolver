@@ -7,12 +7,12 @@
 bool isZero(double s){
     return -precision <= s && s <= precision;
 }
-// SquareSolverErrors
-void solveLinearEquation(functionParametrs* param){
-    
+
+void solveLinearEquation(FunctionParametrs* param){
     CUSTOM_ASSERT(param != nullptr);
+
     if (isZero(param->b) && isZero(param->c)) {
-       param-> nRoots = INFINIT_ROOTS;
+        param-> nRoots = INFINIT_ROOTS;
     } else if (isZero(param->b) && !isZero(param->c)) {
         param-> nRoots = NO_ROOTS;
     } else {
@@ -21,7 +21,7 @@ void solveLinearEquation(functionParametrs* param){
     }
 }
 
-void solveQuadraticEquation(functionParametrs* param){
+void solveQuadraticEquation(FunctionParametrs* param){
     CUSTOM_ASSERT(param != nullptr)
 
     double discriminant = (param->b * param->b) - (4 * param->a * param->c);
@@ -43,7 +43,7 @@ void solveQuadraticEquation(functionParametrs* param){
     } // TODO also make error parser.
 }
 
-void solveEquation(functionParametrs* param){
+void solveEquation(FunctionParametrs* param){
    CUSTOM_ASSERT(param != nullptr); // Error parser function
     if (!isZero(param->a)) {
         solveQuadraticEquation(param);

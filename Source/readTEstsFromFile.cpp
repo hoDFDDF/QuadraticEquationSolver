@@ -2,21 +2,21 @@
 #include "SolveEquation.h"
 #include <string.h>
 
-FILE* fp = fopen("file.txt", "r");
+// FILE* fp = fopen("file.txt", "r");
 
-char words[MAX];
+// char words[MAX] = {};
 
-int getTestsNumber(){
+// int getTestsNumber(){
 
-    int numberOfTests = 0; 
+//     int numberOfTests = 0; 
 
-    while (fgets(words, MAX, fp) != NULL) {
-        numberOfTests++;
-    }
-    fseek(fp, 0 ,SEEK_SET);
-    fclose(fp);
-    return numberOfTests;
-}
+//     while (fgets(words, MAX, fp) != NULL) {
+//         numberOfTests++;
+//     }
+//     fseek(fp, 0 ,SEEK_SET);
+//     fclose(fp);
+//     return numberOfTests;
+// }
 
 Roots convertStringFromFileToEnum(char inputNRootsString){
     if (inputNRootsString == 'T') {

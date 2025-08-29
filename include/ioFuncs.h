@@ -14,6 +14,6 @@
 #define COLOR_CYAN      "\x1b[36m"
 #define COLOR_WHITE     "\x1b[37m"
 
-void printRoots(functionParametrs* param);
+void printRoots(FunctionParametrs* param);
 
 #endif // IO_H_

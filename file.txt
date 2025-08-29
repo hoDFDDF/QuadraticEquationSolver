@@ -1,5 +1,5 @@
-    1  5  6 -2 -3  TWO_ROOTS
-    0  0  0  0  0  INFINIT_ROOTS
+    1  5  6 -2 -3          TWO_ROOTS
+    0  0  0  0  0          INFINIT_ROOTS
     0  3  5  -1.66666667 0 ONE_ROOT
-    1  0 -4   2 -2  TWO_ROOTS 
-    0  0  1   0  0  NO_ROOTS
+    1  0 -4   2 -2         TWO_ROOTS 
+    0  0  1   0  0         NO_ROOTS
